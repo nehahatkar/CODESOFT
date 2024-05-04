@@ -1,19 +1,21 @@
-function showLoginForm() {
-    document.getElementById('login-form').classList.remove('hidden');
-    document.getElementById('signup-form').classList.add('hidden');
+let display = document.getElementById('display');
+
+function appendToDisplay(value) {
+  display.value += value;
 }
 
-function showSignupForm() {
-    document.getElementById('signup-form').classList.remove('hidden');
-    document.getElementById('login-form').classList.add('hidden');
+function clearDisplay() {
+  display.value = '';
 }
 
-function addToCart(bookTitle) {
-    alert(bookTitle + " added to cart!");
-    // You can implement actual cart functionality here
+function calculateResult() {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = 'Error';
+  }
 }
-
-function searchBooks() {
-    var searchTerm = document.querySelector('#search-bar input').value;
-    // You can implement search functionality here, e.g., filtering books based on the search term
-}
+function clearLast() {
+    display.value = display.value.slice(0, -1);
+  }
+  
